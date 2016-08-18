@@ -43,3 +43,20 @@ public class Solution {
         return result.next;
     }
 }
+
+// Test method
+/*
+public static void main(String[] args){
+    ListNode n1 = new ListNode(2);
+    n1.next = new ListNode(4);
+    n1.next.next = new ListNode(3);
+    ListNode n2 = new ListNode(5);
+    n2.next = new ListNode(6);
+    n2.next.next = new ListNode(4);
+    ListNode result = addTwoNumbers(n1, n2);
+    while (result!=null) {
+        System.out.print(result.val);
+        result = result.next;
+    }
+  }
+  */

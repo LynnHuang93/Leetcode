@@ -103,3 +103,14 @@ public class Solution {
 		return result;
 	}
 }
+
+// Test method
+/*
+public static void main(String[] args){
+  int[] nums = {2,7,11,15};
+  int target = 9;
+  int[] result = twoSum(nums, target);
+  System.out.print(result[0]);
+  System.out.print(result[1]);
+}
+*/

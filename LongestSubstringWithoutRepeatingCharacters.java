@@ -36,3 +36,11 @@ public class Solution {
         return max;
     }
 }
+
+//Test method
+/*
+public static void main(String[] args) {
+    String str = "pwwkew";
+    System.out.print(lengthOfLongestSubstring(str));
+}
+*/
