@@ -86,3 +86,10 @@ public static String longestPalindrome(String s) {
     }
   	return news.substring(index - max + 1, index + max).replace("#","");
 }
+
+// Test method
+public static void main(String[] args) {
+	String givenString = "abccdccbc";
+	String result = longestPalindrome(givenString);
+	System.out.print(result);
+}
