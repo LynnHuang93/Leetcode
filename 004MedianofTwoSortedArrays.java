@@ -82,14 +82,14 @@ public class Solution {
         }
         return (findKthElement(l1, start1, end1, l2, start2, end2, k));
     }
+}
 
-    //Test method
-    /*
+//Test method
+/*
     public static void main(String[] args) {
     	int[] list1 = {1, 2, 3};
     	int[] list2 = {5, 6, 7, 8, 9};
     	double result = findMedianSortedArrays(list1, list2);
     	System.out.print(result);
     }
-  }*/
-}
+*/
