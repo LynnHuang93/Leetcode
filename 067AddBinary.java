@@ -9,25 +9,24 @@ b = "1"
 Return "100".
 */
 
-public String addBinary(String a, String b) {
-    int carry = 0;
-    if (a.length() == 0) {
-        return b;
-    } 
-    if (b.length() == 0) {
-        return a;
+public class Solution {
+    public String addBinary(String a, String b) {
+        int carry = 0;
+        int indexa = a.length()-1;
+        int indexb = b.length()-1;
+        String result = "";
+        while (indexa >= 0 || indexb >= 0 || carry != 0) {
+            int digita = indexa >= 0 ? a.charAt(indexa) - '0': 0;
+            indexa--;
+            int digitb = indexb >= 0 ? b.charAt(indexb) - '0': 0;
+            indexb--;
+            carry = digita + digitb + carry;
+            int newDigit = carry % 2;
+            carry = carry/2;
+            result = newDigit == 0 ? "0" + result : "1" + result;
+        }
+        return result;
     }
-    int indexa = a.length() - 1;
-    int indexb = b.length() - 1;
-    String result = "";
-    while (indexa >=0 || indexb >=0 || carry != 0) {
-        int digita = indexa >= 0 ? a.charAt(indexa) - '0' : 0;
-        int digitb = indexb >= 0 ? b.charAt(indexb) - '0' : 0;
-        int sum = digita + digitb + carry;
-        carry = sum / 2;
-        result = String.valueOf(sum % 2) + result;
-    }
-    return result;
 }
 
 /* Test case
