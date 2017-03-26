@@ -42,6 +42,32 @@ public List<String> letterCombinations(String digits) {
     return result;
 }
 
+// Check empty string at the beginning
+// Deal with start using ""
+public List<String> letterCombinationsOfaPhoneNumber(String s) {
+    String[] stringList = {"abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
+    List<String> result = new ArrayList<>();
+    if (s.length() == 0) {
+        return result;
+    }
+    result.add("");
+    for (int i = 0; i < s.length(); i++) {
+        int c = s.charAt(i) - '2';
+        if (i >= 0 && i <= 7) {
+            int resultlen = result.size();
+            String newLetter = stringList[c];
+            List<String> newResult = new ArrayList<>();
+            for (int j = 0; j < newLetter.length(); j++) {
+                for (int k = 0; k < resultlen; k++) {
+                    newResult.add(result.get(k) + Character.toString(newLetter.charAt(j)));
+                }
+            }
+            result = newResult;
+        }
+    }
+    return result;
+}
+
 /* Test case
 "22"
 */

@@ -9,7 +9,7 @@ dict = ["leet", "code"].
 Return true because "leetcode" can be segmented as "leet code".
 */
 
-// Simple backtracking. TLE
+// Simple backtracking. DFS TLE
 public boolean wordBreak(String s, Set<String> wordDict) {
     if (s.length() == 0) {
         return false;

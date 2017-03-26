@@ -15,7 +15,7 @@ Follow Up:
 Can you do it in O(n) time?
 */
 
-// Keep a map to record the earliest existence of sum
+// Keep a map to record the index:sum pair
 public class Solution {
     public int maxSubArrayLen(int[] l, int target) {
         Map<Integer, Integer> map = new HashMap<>();

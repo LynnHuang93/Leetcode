@@ -44,7 +44,46 @@ public int numDecodings(String s) {
     return dp[length];
 }
 
+// DP
+public int numDecodings(String s) {
+    int length = s.length();
+    if (length == 0 || s.equals("0")) {
+        return 0;
+    }
+    if (length == 1) {
+        return 1;
+    }
+    int[] dp = new int[length];
+    dp[0] = 1;
+    int current = Integer.parseInt(s.substring(0,2));
+    if (current < 10 || current == 0 || current > 26 && current % 10 == 0) {
+        return 0;
+    }
+    if ( current > 26 || current % 10 == 0) {
+        dp[1] = 1;
+    } else {
+        dp[1] = 2;
+    }
+    for (int i = 2; i < length; i++) {
+        current = Integer.parseInt(s.substring(i - 1,i + 1));
+        if (current == 0 || current > 26 && current % 10 == 0) {
+            return 0;
+        }
+        if (current < 10 || current > 26) {
+            dp[i] = dp[i - 1];
+        }else {
+            if (current % 10 == 0){
+                dp[i] = dp[i - 2];
+            }else{
+                dp[i] = dp[i - 1] + dp[i - 2];
+            }
+        }
+    }
+    return dp[length-1];
+}
+
 /* Test case
 "01"
 "1206"
+"230"
 */

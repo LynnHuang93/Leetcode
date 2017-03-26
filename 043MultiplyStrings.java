@@ -113,12 +113,14 @@ public String multiply(String num1, String num2) {
     }
     String result = "";
     int index = 0;
+    // Find first non zero index
     while (index < res.length && res[index] == 0) {
         index++;
     }
     if (index == res.length) {
         return "0";
     }
+    // Convert to String result
     while (index < res.length) {
         result += Integer.toString(res[index]);
         index++;
